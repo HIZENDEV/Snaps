@@ -47,7 +47,6 @@ export default class Login extends React.Component {
   }
 
   render() {
-    console.log(randPic)
     return (
       <View style={Sign.container}>
         <Image style={Sign.logo} source={require('@Assets/snaps.png')} />

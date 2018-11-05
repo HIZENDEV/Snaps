@@ -1,5 +1,5 @@
 import React  from 'react'
-import { YellowBox } from 'react-native'
+import { YellowBox, Text } from 'react-native'
 import Route from './src/Router'
 
 export default class App extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, ListView } from 'react-native'
+import { ListView } from 'react-native'
 import { app } from '@Config/firebase'
 import ListItem from '@Components/List'
 import Header from '@Components/Header'

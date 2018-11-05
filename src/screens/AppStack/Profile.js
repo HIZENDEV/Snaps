@@ -65,7 +65,7 @@ export default class Profile extends React.Component {
           <Text style={User.displayName}>{ user ? user.displayName : null }</Text>
           <Text style={User.email}>{user ? user.email : null}</Text>
           <View style={User.listContainer}>
-          { this.state.dataSource.rowIdentities[0].length >= 1 ? (
+          { this.state.dataSource.rowIdentities.length ? (
             <ListView
               contentContainerStyle={User.listView}
               dataSource={this.state.dataSource}
@@ -74,7 +74,6 @@ export default class Profile extends React.Component {
           ) : (
             <Text style={User.noPics}>You have no pictures yet</Text>
           )}
-            <Text style={User.noPics}>You have no pictures yet</Text>
           </View>
         </View>
       </React.Fragment>

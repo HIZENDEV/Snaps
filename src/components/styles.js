@@ -341,7 +341,7 @@ export const PostImg = StyleSheet.create({
     margin: (theme.DEVICE_WIDTH * (1.2 / 100)) / 2,
     marginVertical: (theme.DEVICE_WIDTH * (2 / 100)) / 2,
     borderRadius: 8,
-    elevation: 6
+    elevation: 0
   },
   image: {
     backgroundColor: 'lightgrey',

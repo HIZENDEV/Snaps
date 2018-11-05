@@ -19,14 +19,16 @@ export default class Profile extends React.Component {
 
   render() {
     const user = this.state.user
+    console.log(user)
     return (
       <React.Fragment>
         <Header title={this.state.screen} />
         <View style={User.container}>
           <View style={User.avatarShadow}>
-            <Image style={User.avatar} source={{ uri: `${user ? user.photoUrl : null}` }} />
+            <Image style={User.avatar} source={{ uri: `${user ? user.photoURL : null}` }} />
           </View>
           <Text style={User.displayName}>{ user ? user.displayName : null }</Text>
+          <Text style={User.email}>{user ? user.email : null}</Text>
         </View>
       </React.Fragment>
     )

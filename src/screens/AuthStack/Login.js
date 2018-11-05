@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, TextInput, View, Image, TouchableOpacity } from 'react-native'
 import { app } from '@Config/firebase'
 import { Sign } from '@Components/styles'
+import { randPic } from '@Config/pictures'
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -29,22 +30,24 @@ export default class Login extends React.Component {
   }
 
   setUserInDb = () => {
+    const pic = randPic
     const username = this.state.username
     const user = app.auth().currentUser
     user.updateProfile({
       displayName: username,
-      photoURL: 'https://i.imgur.com/SCw99pI.png'
+      photoURL: pic
     })
     .then(() => 
       app.database().ref('users/' + username + '/').set({
         username: user.displayName,
-        photoURL: 'https://i.imgur.com/SCw99pI.png'
+        photoURL: pic
       })
     )
     .then(() => this.props.navigation.navigate('App'))
   }
 
   render() {
+    console.log(randPic)
     return (
       <View style={Sign.container}>
         <Image style={Sign.logo} source={require('@Assets/snaps.png')} />

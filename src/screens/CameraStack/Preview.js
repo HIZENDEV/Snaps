@@ -56,6 +56,9 @@ export default class Confirm extends React.Component {
           title: title,
           url: url
         })
+        app.database().ref('users/' + user.displayName + '/posts/').push({
+          url: url
+        })
         this.setState({ uploading: false })
         this.props.navigation.navigate('App')
       })
@@ -74,10 +77,10 @@ export default class Confirm extends React.Component {
     return (
       <React.Fragment>
         <View style={Preview.cropTop}>
-          <TouchableOpacity style={Preview.actions} onPress={() => this.props.navigation.navigate('App')}>
+          <TouchableOpacity style={Preview.actions} disabled={this.state.uploading} onPress={() => this.props.navigation.navigate('App')}>
             <Ionicons name={'close'} size={35} color={'#FF858A'} />
           </TouchableOpacity>
-          <TouchableOpacity style={Preview.actions} onPress={() => this.getSelectedImages(data.uri)}>
+          <TouchableOpacity style={Preview.actions} disabled={this.state.uploading} onPress={() => this.getSelectedImages(data.uri)}>
             <Ionicons name={'check'} size={35} color={'#29C3B7'} />
           </TouchableOpacity>
         </View>

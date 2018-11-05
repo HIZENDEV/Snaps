@@ -317,5 +317,37 @@ export const User = StyleSheet.create({
     fontFamily: theme.BOLD_FONT,
     color: theme.PRIMARY_COLOR,
     fontSize: 24,
+  },
+  listView: {
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+  },
+  listContainer: {
+    flex: 1,
+    marginTop: '20%'
+  },
+  noPics: {
+    textAlign: 'center',
+    fontFamily: theme.MEDIUM_FONT
+  }
+})
+
+export const PostImg = StyleSheet.create({
+  card: {
+    width: theme.DEVICE_WIDTH - (theme.DEVICE_WIDTH * (70 / 100)),
+    height: theme.DEVICE_WIDTH / 4,
+    margin: (theme.DEVICE_WIDTH * (1.2 / 100)) / 2,
+    marginVertical: (theme.DEVICE_WIDTH * (2 / 100)) / 2,
+    borderRadius: 8,
+    elevation: 6
+  },
+  image: {
+    backgroundColor: 'lightgrey',
+    width: '100%',
+    resizeMode: 'cover',
+    height: theme.DEVICE_WIDTH / 4,
+    borderRadius: 8
   }
 })

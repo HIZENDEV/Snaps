@@ -229,6 +229,11 @@ export const Sign = StyleSheet.create({
     height: 150,
     resizeMode: 'contain',
   },
+  logoIndicator: {
+    width: 80,
+    height: 80,
+    resizeMode: 'contain',
+  },
   title: {
     fontFamily: theme.BOLD_FONT,
     fontSize: 38,

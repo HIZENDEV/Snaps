@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TextInput, View, Image, TouchableOpacity } from 'react-native'
+import { Alert, Text, TextInput, View, Image, TouchableOpacity } from 'react-native'
 import { app } from '@Config/firebase'
 import { Sign } from '@Components/styles'
 import { randPic } from '@Config/pictures'
@@ -19,14 +19,14 @@ export default class Login extends React.Component {
     app.auth()
       .createUserWithEmailAndPassword(email, this.state.password)
       .then(() => this.setUserInDb())
-      .catch(error => alert(error.message))
+      .catch(error => Alert.alert('Error', error.message, [{ text: 'OK' }]))
   }
   handleSignIn = () => {
     const email = this.state.username + '@sna.ps'
     app.auth()
       .signInWithEmailAndPassword(email, this.state.password)
       .then(() => this.props.navigation.navigate('App'))
-      .catch(error => alert(error.message))
+      .catch(error => Alert.alert('Error', error.message, [{ text: 'OK' }]))
   }
 
   setUserInDb = () => {

@@ -16,16 +16,16 @@ export default class ListItem extends React.Component {
           <Text style={Item.displayName}>{this.props.item.from}</Text>
         </View>
         <View style={Item.actions}>
-          <TouchableOpacity style={Item.like} >
+          <TouchableOpacity style={Item.like} onPress={this.props.like}>
             <Ionicons name={'heart'} size={20} color={'#F07887'} />
-            <Text style={Item.count}>{this.props.item.loved ? this.props.item.loved : 0} like</Text>
+            <Text style={Item.count}>{this.props.item.loved ? this.props.item.loved.count : 0} like</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Item.like}>
+          <TouchableOpacity style={Item.like} onPress={this.props.comment}>
             <Ionicons name={'comment'} size={20} color={'#5884F0'} />
             <Text style={Item.count}>{this.props.item.comments ? this.props.item.comments : 0} comments</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={Item.like}>
+          <TouchableOpacity style={Item.like} onPress={this.props.save}>
             <Ionicons name={'bookmark-minus'} size={20} color={'#FF9A67'} />
             <Text style={Item.count}>{this.props.item.saved ? this.props.item.saved : 0} saved</Text>
           </TouchableOpacity>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListView } from 'react-native'
+import { Alert, ListView } from 'react-native'
 import { app } from '@Config/firebase'
 import ListItem from '@Components/List'
 import Header from '@Components/Header'
@@ -17,9 +17,33 @@ export default class Home extends React.Component {
     this.collectionRef = app.database().ref('/collection')
   }
 
+  likePost(itemKey) {
+    const postLoved = this.collectionRef.child(itemKey + '/loved/count')
+    const currentUserLike = this.collectionRef.child(itemKey + '/loved/' + this.state.currentUser.uid)
+    currentUserLike.transaction(function (isTruthy) {
+      if (!isTruthy) {
+        postLoved.transaction(function (count) {return count + 1})
+        return true
+      } else {
+        currentUserLike.remove()
+        postLoved.transaction(function (count) { return count - 1 })
+      }
+    })
+  }
+
+
   _renderItem(item) {
+    const like = () => {
+      this.likePost(item._key)
+    }
+    const comment = () => {
+      Alert.alert('Oops!', 'This feature is currently unavailable', [{ text: 'OK'}])
+    }
+    const save = () => {
+      Alert.alert('Oops!', 'This feature is currently unavailable', [{ text: 'OK'}])
+    }
     return (
-      <ListItem item={item} />
+      <ListItem item={item} like={like} comment={comment} save={save} />
     )
   }
 

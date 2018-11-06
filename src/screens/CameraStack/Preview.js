@@ -1,5 +1,5 @@
 import React from "react"
-import { TouchableOpacity, Image, View, ActivityIndicator, TextInput } from 'react-native'
+import { TouchableOpacity, Alert, ActivityIndicator, TextInput } from 'react-native'
 import Ionicons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Preview } from "@Components/styles"
 import RNFetchBlob from 'rn-fetch-blob'
@@ -63,7 +63,7 @@ export default class Confirm extends React.Component {
         this.props.navigation.navigate('App')
       })
       .catch((error) => {
-        alert(error)
+        Alert.alert('Error', error, [{ text: 'OK' }])
         this.setState({ uploading: false })
         this.props.navigation.navigate('App')
       })

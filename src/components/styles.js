@@ -20,15 +20,22 @@ export const Item = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     backgroundColor: theme.BACKGROUND,
+  },
+  user: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingLeft: '1%'
   },
   avatar: {
     backgroundColor: 'lightgrey',
-    width: 40,
-    height: 40,
+    width: 35,
+    height: 35,
     resizeMode: 'cover',
-    borderRadius: 40,
+    borderRadius: 35,
     margin: '4%'
   },
   hover: {
@@ -75,6 +82,10 @@ export const Item = StyleSheet.create({
     color: theme.SOFT_GREY,
     fontFamily: theme.MEDIUM_FONT,
     marginLeft: '4%'
+  },
+  viewComments: {
+    color: theme.SOFT_GREY,
+    paddingRight: '3%'
   },
 })
 
@@ -354,5 +365,72 @@ export const PostImg = StyleSheet.create({
     resizeMode: 'cover',
     height: theme.DEVICE_WIDTH / 4,
     borderRadius: 8
+  }
+})
+
+export const InputActivity = StyleSheet.create({
+  modal: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
+  content: {
+    width: theme.DEVICE_WIDTH,
+    margin: 0,
+    display: 'flex',
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'stretch'
+  },
+  send: {
+    backgroundColor: '#fff',
+    width: '13%'
+  },
+  icon: {
+    padding: 10
+  },
+  input: {
+    backgroundColor: '#fff',
+    paddingLeft: '4%',
+    width: '87%'
+  }
+})
+
+export const Comments = StyleSheet.create({
+  modal: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
+  container: {
+    height: theme.DEVICE_HEIGHT,
+    width: theme.DEVICE_WIDTH,
+    margin: 0,
+    backgroundColor: theme.BACKGROUND,
+    paddingTop: 10
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: theme.BACKGROUND
+  },
+  message: {
+    color: theme.SOFT_GREY,
+    fontFamily: theme.MEDIUM_FONT,
+    marginRight: '10%',
+  },
+  avatar: {
+    backgroundColor: 'lightgrey',
+    width: 35,
+    height: 35,
+    resizeMode: 'cover',
+    borderRadius: 35,
+    margin: '4%'
+  },
+  displayName: {
+    color: '#000',
+    fontFamily: theme.BOLD_FONT,
+    fontWeight: 'bold',
+    fontSize: 16
   }
 })

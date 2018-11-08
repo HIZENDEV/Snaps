@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, TouchableOpacity, Image } from 'react-native'
+import { View, TouchableOpacity, Image  } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import { Snapshot } from '@Components/styles'
 

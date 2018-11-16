@@ -1,8 +1,8 @@
-import Reactotron, { networking, trackGlobalErrors, overlay } from 'reactotron-react-native'
+import Reactotron, { networking, overlay } from 'reactotron-react-native'
 
 Reactotron
-  .configure() // controls connection & communication settings
+  .configure()
   .use(networking())
   .use(overlay())
-  .useReactNative() // add all built-in react native plugins
-  .connect() // let's connect!
+  .useReactNative()
+  .connect()

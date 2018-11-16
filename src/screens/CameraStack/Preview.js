@@ -1,5 +1,5 @@
 import React from "react"
-import { TouchableOpacity, Alert, ActivityIndicator, TextInput, View } from 'react-native'
+import { TouchableOpacity, Alert, ActivityIndicator, TextInput, View, Image } from 'react-native'
 import Ionicons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Preview } from "@Components/styles"
 import RNFetchBlob from 'rn-fetch-blob'

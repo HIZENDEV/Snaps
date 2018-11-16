@@ -14,10 +14,6 @@ export default class Switch extends React.Component {
   }
 
   render() {
-    return (
-      <React.Fragment>
-        <Text>{ this.state.screen }</Text>
-      </React.Fragment>
-    )
+    return <Text> {this.state.screen} </Text>
   }
 }

@@ -6,9 +6,6 @@ import { Sign } from '@Components/styles'
 export default class AuthLoading extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      screen: 'Auth'
-    }
     this.animatedValue = new Animated.Value(0)
   }
 
